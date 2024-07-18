@@ -73,7 +73,7 @@ v_t = \beta_2 v_{t-1} + (1 - \beta_2) (\nabla_\theta J(\theta))^2 \\\
 \hat{m}_t = \frac{m_t}{1 - \beta_1^t} \\\
 \hat{v}_t = \frac{v_t}{1 - \beta_2^t} \\\
 \theta := \theta - \eta \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon}
-\endd{aligned}
+\end{aligned}
 $$
 
 where:
