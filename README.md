@@ -16,7 +16,7 @@ The introduction provides an overview of optimization methods in deep learning, 
 Gradient Descent is the most basic optimization algorithm. The idea is to update the parameters in the opposite direction of the gradient of the loss function with respect to the parameters. The update rule is given by:
 
 ```latex
-\theta := \theta - \eta \nabla_\theta J(\theta)
+$\theta := \theta - \eta \nabla_\theta J(\theta)$
 ```
 
 where:
