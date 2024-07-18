@@ -45,8 +45,10 @@ where $x^{(i:i+n)}$ and $y^{(i:i+n)}$ are batches of training examples and label
 Momentum aims to accelerate Gradient Descent by adding a fraction of the previous update to the current update. The update rule is:
 
 $$
+\begin{aligned}
 v_t = \gamma v_{t-1} + \eta \nabla_\theta J(\theta) \\\
 \theta := \theta - v_t
+\end{aligned}
 $$
 
 where $\gamma$ is the momentum term.
