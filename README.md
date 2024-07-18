@@ -14,9 +14,9 @@ The introduction provides an overview of optimization methods in deep learning, 
 #### Gradient Descent
 Gradient Descent is the most basic optimization algorithm. The idea is to update the parameters in the opposite direction of the gradient of the loss function with respect to the parameters. The update rule is given by:
 
-$
+$$
 \theta := \theta - \eta \nabla_\theta J(\theta)
-$
+$$
 
 where:
 - $\theta$ represents the parameters.
@@ -26,49 +26,57 @@ where:
 #### Stochastic Gradient Descent (SGD)
 SGD is a variant of Gradient Descent where the parameters are updated for each training example. The update rule is:
 
-$
+$$
 \theta := \theta - \eta \nabla_\theta J(\theta; x^{(i)}, y^{(i)})
-$
+$$
 
 where $x^{(i)}$ and $y^{(i)}$ are the $i$-th training example and label, respectively.
 
 #### Mini-batch Gradient Descent
 Mini-batch Gradient Descent is a compromise between Batch Gradient Descent and Stochastic Gradient Descent. The update rule is applied to small batches of training data:
 
-$
+$$
 \theta := \theta - \eta \nabla_\theta J(\theta; x^{(i:i+n)}, y^{(i:i+n)})
-$
+$$
 
 where $x^{(i:i+n)}$ and $y^{(i:i+n)}$ are batches of training examples and labels.
 
 #### Momentum
 Momentum aims to accelerate Gradient Descent by adding a fraction of the previous update to the current update. The update rule is:
 
-$
-v_t = \gamma v_{t-1} + \eta \nabla_\theta J(\theta) \\
+$$
+v_t = \gamma v_{t-1} + \eta \nabla_\theta J(\theta) 
+$$
+$$
 \theta := \theta - v_t
-$
+$$
 
 where $\gamma$ is the momentum term.
 
 #### Nesterov Accelerated Gradient (NAG)
 NAG is a variant of Momentum where the gradient is calculated at the approximate future position of the parameters:
 
-$
-v_t = \gamma v_{t-1} + \eta \nabla_\theta J(\theta - \gamma v_{t-1}) \\
+$$
+v_t = \gamma v_{t-1} + \eta \nabla_\theta J(\theta - \gamma v_{t-1}) 
+$$
+$$
 \theta := \theta - v_t
-$
+$$
 
 #### Adam Optimizer
 Adam (Adaptive Moment Estimation) combines the advantages of two other extensions of stochastic gradient descent. It computes individual adaptive learning rates for different parameters from estimates of first and second moments of the gradients. The update rules are:
 
-$
-m_t = \beta_1 m_{t-1} + (1 - \beta_1) \nabla_\theta J(\theta) \\
-v_t = \beta_2 v_{t-1} + (1 - \beta_2) (\nabla_\theta J(\theta))^2 \\
-\hat{m}_t = \frac{m_t}{1 - \beta_1^t} \\
-\hat{v}_t = \frac{v_t}{1 - \beta_2^t} \\
+$$
+m_t = \beta_1 m_{t-1} + (1 - \beta_1) \nabla_\theta J(\theta) $$
+$$
+v_t = \beta_2 v_{t-1} + (1 - \beta_2) (\nabla_\theta J(\theta))^2 $$
+$$
+\hat{m}_t = \frac{m_t}{1 - \beta_1^t} $$
+$$
+\hat{v}_t = \frac{v_t}{1 - \beta_2^t} $$
+$$
 \theta := \theta - \eta \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon}
-$
+$$
 
 where:
 - $m_t$ and $v_t$ are the first and second moment estimates.
