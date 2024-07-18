@@ -57,19 +57,23 @@ where $\gamma$ is the momentum term.
 NAG is a variant of Momentum where the gradient is calculated at the approximate future position of the parameters:
 
 $$
+\begin{aligned}
 v_t = \gamma v_{t-1} + \eta \nabla_\theta J(\theta - \gamma v_{t-1}) \\\
 \theta := \theta - v_t
+\end{aligned}
 $$
 
 #### Adam Optimizer
 Adam (Adaptive Moment Estimation) combines the advantages of two other extensions of stochastic gradient descent. It computes individual adaptive learning rates for different parameters from estimates of first and second moments of the gradients. The update rules are:
 
 $$
+\begin{aligned}
 m_t = \beta_1 m_{t-1} + (1 - \beta_1) \nabla_\theta J(\theta) \\\
 v_t = \beta_2 v_{t-1} + (1 - \beta_2) (\nabla_\theta J(\theta))^2 \\\
 \hat{m}_t = \frac{m_t}{1 - \beta_1^t} \\\
 \hat{v}_t = \frac{v_t}{1 - \beta_2^t} \\\
 \theta := \theta - \eta \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon}
+\endd{aligned}
 $$
 
 where:
